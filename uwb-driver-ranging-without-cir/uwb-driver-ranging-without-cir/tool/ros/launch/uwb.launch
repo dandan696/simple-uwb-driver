@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="simple_uwb_driver" type="simple_uwb_driver" name="simple_uwb_driver" output="screen">
+        <param name="serial_port" value="/dev/ttyUSB0"/>
+        <param name="serial_baudrate" value="460800"/>
+    </node>
+
+</launch>

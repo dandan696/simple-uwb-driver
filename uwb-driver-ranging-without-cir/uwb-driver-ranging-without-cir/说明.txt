@@ -1,0 +1,96 @@
+20220222_V6.1
+整合ULM1和ULM3，通过#define切换
+
+20220223_V6.2
+增加debug时间输出调试信息
+
+20220224_V6.3
+ULM1融合110K和6.8M
+
+20220224_V6.4
+增加外部功耗开关
+新增串口总线空闲中断
+8基站支持
+
+20220228_V7.0
+增加基站广播同步时间机制
+
+20220228_V7.1
+增加开机输出模块自身信息
+
+20220228_V7.2
+增加标签控制DWx000 deep sleep功能
+
+20220308_V7.3
+增加IMU驱动和标签输出格式
+
+20220309_V7.4
+完善三边定位算法
+增加基站坐标配置和存储
+
+20220324_v7.5
+判断dwt_starttx()返回值，在错误的情况下，不继续等待成功标志位，直接返回
+
+V40
+与ULM3同一版本号
+去掉sync，增加blink
+
+V41
+6.8M blink init消息延时发送接收
+
+V44
+修改#define MAX_TAG_NUM   ULM1+ULM3 统一
+
+V46
+基站坐标设置长度增加
+最大 $sanccd,999.99,999.99,999.99,999.99,999.99,999.99,999.99,999.99,999.99,999.99,999.99,999.99
+共计 94个字符
+#define COORD_LENGTH     120
+更新关联
+e2prom.h
+dw_main.c
+
+V47
+修改imu输出格式，增加数据头mi,
+更新关联
+dw_main.c
+
+V48
+L151设备可通过串口指令设置拨码开关值
+$ssw8,11     设置拨码开关值，L151设备有效，16进制 0001 0001
+更新关联
+dw_main.c
+e2prom.h
+instance.h
+
+
+V49
+通过define控制L151不编译IMU42605相关节省程序空间
+通过define控制L151不编译anchor相关节省程序空间
+DEEP_SLEEP不开启时，不设置sleep_config
+diff_time += (tag_id%10 + 1);
+更新关联
+dw_main.c
+instace_anchor.c
+instace_tag.c
+icm42605.c
+icm42605.h
+
+V50
+优化EEPROM写入代码
+增加F103单片机的三轴加速度驱动
+#define RESP_RX_TIMEOUT_110K     3000改2600
+define LD600 改为 LD_PA
+更新关联
+dw_main.c
+e2prom.h
+instance.h
+
+
+V51
+增加2组SLOT动态分配，存入EEPROM
+更新关联
+dw_main.c
+instance.h
+e2prom.c
+e2prom.h

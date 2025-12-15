@@ -1,0 +1,54 @@
+.vscode/
+# 忽略 .a 文件
+*.a
+# 但否定忽略 lib.a, 尽管已经在前面忽略了 .a 文件
+!lib.a
+# 仅在当前目录下忽略 TODO 文件， 但不包括子目录下的 subdir/TODO
+/TODO
+# 忽略 build/ 文件夹下的所有文件(不管目录是不是在根目录，也不管是不是有几个)
+build/
+#忽略build文件夹下的所有文件，但不包括build文件夹本身
+build/*
+# 忽略 doc/notes.txt, 不包括 doc/server/arch.txt
+doc/*.txt
+# 忽略所有的 .pdf 文件 在 doc/ directory 下的
+doc/**/*.pdf
+
+##keil生成，需要忽略的debugconfig和obj目录
+*.bak
+*.scvd
+*.ini
+*.Administrator
+*.hp
+*.uvoptx
+*.o
+*.d
+*.crf
+*.htm
+*.lst
+*.map
+*.sct
+*.dep
+*.uvguix.*
+JLinkLog.txt
+*.iex
+*.tra
+*.bak
+*.ddk
+*.edk
+*.lnp
+*.mpf
+*.mpj
+*.obj
+*.omf
+*.plg
+*.rpt
+*.tmp
+*.__i
+*.pbi
+*.cout
+*.pbd
+*.browse
+
+DebugConfig/  
+OBJ/
